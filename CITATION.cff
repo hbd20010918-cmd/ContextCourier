@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If ContextCourier supports your work, please cite the software release."
+title: "ContextCourier"
+type: software
+version: "0.1.0"
+date-released: "2026-08-11"
+abstract: "A local-first CLI for portable, redacted, and verifiable AI coding project handoffs."
+authors:
+  - name: "hbd20010918-cmd"
+repository-code: "https://github.com/hbd20010918-cmd/ContextCourier"
+repository-artifact: "https://github.com/hbd20010918-cmd/ContextCourier/releases/tag/v0.1.0"
+url: "https://github.com/hbd20010918-cmd/ContextCourier"
+license: MIT
+keywords:
+  - AI coding agents
+  - project handoff
+  - context portability
+  - reproducible archives
+  - secret redaction

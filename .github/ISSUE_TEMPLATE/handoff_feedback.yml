@@ -1,0 +1,39 @@
+name: Account-switching feedback
+description: Share a privacy-safe result from a real ContextCourier handoff.
+title: "[Handoff]: "
+labels: [feedback]
+body:
+  - type: dropdown
+    id: source
+    attributes:
+      label: Source tool
+      options: [Codex, Claude Code, Cursor, Other]
+    validations:
+      required: true
+  - type: dropdown
+    id: destination
+    attributes:
+      label: Destination tool
+      options: [Codex, Claude Code, Cursor, Other]
+    validations:
+      required: true
+  - type: textarea
+    id: worked
+    attributes:
+      label: What continuity was preserved?
+      description: Do not include private project names, source, paths, chats, or credentials.
+    validations:
+      required: true
+  - type: textarea
+    id: missing
+    attributes:
+      label: What did the new account or tool still misunderstand?
+    validations:
+      required: true
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Privacy check
+      options:
+        - label: This report contains no private source, account data, or secrets.
+          required: true

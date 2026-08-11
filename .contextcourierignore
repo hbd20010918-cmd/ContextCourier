@@ -1,0 +1,5 @@
+# Additional repository-specific exclusions. Rules are deny-only.
+coverage/
+reports/
+tmp/
+smoke.contextcourier.zip

@@ -1,0 +1,5 @@
+[contextcourier]
+max_file_size = 1048576
+max_total_size = 26214400
+max_files = 5000
+include_untracked = true

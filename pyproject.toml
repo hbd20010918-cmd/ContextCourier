@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "contextcourier"
+version = "0.1.0"
+description = "Carry verified, secret-aware project context across AI coding tools and accounts."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+  { name = "hbd20010918-cmd" }
+]
+keywords = [
+  "ai",
+  "coding-agent",
+  "context",
+  "codex",
+  "claude-code",
+  "cursor",
+  "developer-tools"
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Software Development :: Version Control :: Git"
+]
+dependencies = []
+
+[project.scripts]
+ctxcourier = "contextcourier.cli:entrypoint"
+
+[project.urls]
+Homepage = "https://github.com/hbd20010918-cmd/ContextCourier"
+Documentation = "https://github.com/hbd20010918-cmd/ContextCourier#readme"
+Issues = "https://github.com/hbd20010918-cmd/ContextCourier/issues"
+Source = "https://github.com/hbd20010918-cmd/ContextCourier"
+Changelog = "https://github.com/hbd20010918-cmd/ContextCourier/blob/main/CHANGELOG.md"
+Releases = "https://github.com/hbd20010918-cmd/ContextCourier/releases"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+contextcourier = ["py.typed"]

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">ContextCourier</title>
+  <desc id="desc">Carry verified, secret-aware project context across AI coding tools and accounts.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="1" stop-color="#10284b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1">
+      <stop offset="0" stop-color="#59e1ff"/>
+      <stop offset="1" stop-color="#9b7bff"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="520" rx="28" fill="url(#bg)"/>
+  <circle cx="1045" cy="70" r="170" fill="#2456a6" opacity=".22"/>
+  <circle cx="120" cy="470" r="210" fill="#502b92" opacity=".18"/>
+
+  <g transform="translate(70 68)">
+    <rect x="0" y="0" width="118" height="96" rx="18" fill="#0d203b" stroke="url(#accent)" stroke-width="4"/>
+    <path d="M18 30h82M18 48h52M18 66h66" stroke="#9deaff" stroke-width="7" stroke-linecap="round"/>
+    <path d="M116 48h74" stroke="url(#accent)" stroke-width="8" stroke-linecap="round" filter="url(#glow)"/>
+    <path d="M172 27l24 21-24 21" fill="none" stroke="#9b7bff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M222 15l45 17v35c0 28-18 48-45 58-27-10-45-30-45-58V32z" fill="#102d4d" stroke="#67e5d2" stroke-width="4"/>
+    <path d="M202 67l14 14 27-30" fill="none" stroke="#67e5d2" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <text x="380" y="112" fill="#f4f8ff" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="70" font-weight="750">ContextCourier</text>
+  <text x="382" y="160" fill="#91a9c8" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="25">Carry project context safely across AI accounts.</text>
+
+  <g transform="translate(70 222)">
+    <rect width="1060" height="235" rx="18" fill="#050b14" stroke="#263c59" stroke-width="2"/>
+    <circle cx="27" cy="25" r="6" fill="#ff6b6b"/><circle cx="48" cy="25" r="6" fill="#ffd166"/><circle cx="69" cy="25" r="6" fill="#62d26f"/>
+    <text x="92" y="31" fill="#7188a4" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="17">local terminal · no API · no upload</text>
+    <text x="28" y="78" fill="#8da4be" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="21">$ ctxcourier scan .</text>
+    <text x="28" y="112" fill="#d6e6f8" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="19">Selected: 84 files · Redactions: 2 · Skipped: 1,147</text>
+    <text x="28" y="151" fill="#8da4be" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="21">$ ctxcourier pack .</text>
+    <text x="28" y="185" fill="#67e5d2" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="19">[OK] deterministic handoff created and ready to verify</text>
+    <text x="28" y="218" fill="#9b7bff" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="17">Codex  ↔  Claude Code  ↔  Cursor  ↔  any AI that can read a ZIP</text>
+  </g>
+</svg>

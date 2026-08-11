@@ -1,0 +1,33 @@
+name: Feature request
+description: Propose an improvement to safe project handoffs.
+title: "[Feature]: "
+labels: [enhancement, triage]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Handoff problem
+      description: What continuity or trust problem is not solved today?
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+      description: Describe observable behavior, not only an implementation.
+    validations:
+      required: true
+  - type: textarea
+    id: safety
+    attributes:
+      label: Privacy, compatibility, and security impact
+      description: Could this collect more data, weaken an exclusion, or change schema v1?
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Project boundaries
+      options:
+        - label: This does not require scraping private app databases or copying account credentials.
+          required: true
