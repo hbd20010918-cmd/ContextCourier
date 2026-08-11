@@ -2,4 +2,7 @@
 coverage/
 reports/
 tmp/
+
+# This detector test intentionally constructs synthetic credential formats.
+tests/test_redact.py
 smoke.contextcourier.zip

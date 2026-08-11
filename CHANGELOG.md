@@ -19,5 +19,7 @@ All notable changes to ContextCourier are documented here. The project follows
 - English and Simplified Chinese account-switching documentation.
 - Cross-platform CI and standard-library tests for tampering, traversal, reproducibility,
   secret canaries, configuration, Git privacy, and CLI flows.
+- Fail-closed policy snapshots, bounded Git and filesystem work, disabled external Git
+  protocols/lazy fetching, and complete scalar redaction for escaped and multiline values.
 
 [0.1.0]: https://github.com/hbd20010918-cmd/ContextCourier/releases/tag/v0.1.0

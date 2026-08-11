@@ -25,6 +25,8 @@ ContextCourier 会把软件项目生成一个可携带、已脱敏、可校验�
 需要 Python 3.11+；建议安装 Git，以获得精确的仓库识别和忽略规则语义。没有任何
 Python 运行时包依赖；如果没有 Git，ContextCourier 会明确提示并使用尽力而为的目录
 扫描回退。
+对于 Git 仓库，传入路径必须是仓库顶层目录；工具会拒绝子目录，避免静默扩大扫描范围
+并把同级内容带入交接包。
 
 ```powershell
 # 从 GitHub Release 安装

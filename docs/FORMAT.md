@@ -113,13 +113,21 @@ Policy values may be lower, but neither configuration nor a verified v1 manifest
 | Packed selected source bytes | 48 MiB |
 | Selected source files | 10,000 |
 | Candidate paths considered by the scanner | 100,000 |
+| Aggregate candidate-path bytes | 32 MiB |
+| Source bytes read during inspection and stability recheck | 96 MiB |
+| One configuration or ignore-policy file | 1 MiB |
+| Project ignore rules / bytes per pattern | 512 / 1 KiB |
+| Ignore rule-component match work | 2,000,000 evaluations |
+| One Git command stdout / stderr | 32 MiB / 1 MiB |
 | Finished archive | 64 MiB |
 | `MANIFEST.json` | 2 MiB |
 | ZIP entries, including `MANIFEST.json` | 10,010 |
 | ZIP central directory | 8 MiB |
 
-The scanner enforces the original-source and packed-byte budgets independently. Inspection
-and verification also reject Zip64 and multi-disk archives before reading the manifest.
+The scanner enforces original-source, packed-byte, and read-work budgets independently.
+The read-work ceiling is twice the configured original-source budget because selected files
+are read again to confirm stability. Inspection and verification also reject Zip64 and
+multi-disk archives before reading the manifest.
 
 ## Path rules
 

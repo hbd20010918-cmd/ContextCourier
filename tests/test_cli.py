@@ -67,8 +67,10 @@ class CliTests(unittest.TestCase):
     def test_secret_in_filename_triggers_fail_on_secret(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
-            token = "ghp_" + ("f" * 36)
-            (root / f"notes-{token}.txt").write_text("safe body\n", encoding="utf-8")
+            credential = "ghp_" + ("f" * 36)
+            (root / f"notes-{credential}.txt").write_text(
+                "safe body\n", encoding="utf-8"
+            )
             output = root / "blocked.contextcourier.zip"
             with redirect_stderr(io.StringIO()):
                 result = main(

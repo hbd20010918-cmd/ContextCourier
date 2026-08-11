@@ -51,6 +51,8 @@ optimizes for **continuity and trust**:
 Python 3.11+ is required and Git is recommended for exact repository/ignore semantics.
 There are no runtime Python package dependencies; without Git, ContextCourier uses a
 clearly labelled best-effort directory fallback.
+For Git repositories, the path must be the repository's top-level directory; a subdirectory
+is rejected instead of silently broadening the scan to sibling content.
 
 ```bash
 # Install the current GitHub release

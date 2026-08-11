@@ -54,6 +54,21 @@ def is_link_or_reparse(path: Path, file_stat: os.stat_result | Any | None = None
     return bool(attributes & reparse_flag)
 
 
+def has_link_or_reparse_component(path: Path, root: Path) -> bool:
+    """Check every component below ``root`` without following it first."""
+    try:
+        relative = path.relative_to(root)
+    except ValueError:
+        return True
+    current = root
+    for part in relative.parts:
+        current = current / part
+        details = current.lstat()
+        if stat.S_ISLNK(details.st_mode) or is_link_or_reparse(current, details):
+            return True
+    return False
+
+
 def portable_posix_path(value: str, *, normalize: bool = False) -> str | None:
     """Return a Windows-safe, canonical POSIX path, or ``None`` when unsafe."""
     if not value or "\x00" in value or "\\" in value:

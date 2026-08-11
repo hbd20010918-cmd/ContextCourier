@@ -27,6 +27,8 @@
 - Immutable credential-container, key, account-folder, dependency, cache, build, database,
   binary, and generated-archive exclusions.
 - Deny-only `.contextcourierignore`; re-inclusion is rejected.
+- Bounded policy files, ignore-rule count and match work, Git output, candidate paths, and
+  total bytes read even when a candidate is ultimately skipped.
 - `lstat`, symlink/junction rejection, resolved-root containment, and pre/post-read stat
   comparison.
 - Unicode NFC path normalization, control/bidi rejection, and case-fold collision checks.
@@ -35,6 +37,8 @@
   remote, or wall-clock timestamp in the manifest.
 - Atomic same-directory archive write and cleanup of failed temporary output.
 - Stable `--fail-on-secret` refusal mode that writes no archive.
+- Git lazy fetching, external protocols, submodule status recursion, inherited Git routing,
+  tracing, and pathspec environment switches are disabled for discovery commands.
 - Bounded, non-extracting inspection and stored-entry-only SHA-256 verification.
 - Tests build synthetic credentials at runtime so repository secret scanners do not learn or
   expose real values.
@@ -50,6 +54,8 @@ ContextCourier does not claim to:
 - securely erase data from storage media;
 - migrate private ChatGPT/Codex/Claude/Cursor conversations or account state;
 - make a redacted source snapshot safe for public release without human review.
+- act as an operating-system sandbox against a privileged local process that can replace
+  filesystem objects during a scan.
 
 Future versions may add pluggable detectors and Sigstore attestations. These are not part of
 the v1 security contract.

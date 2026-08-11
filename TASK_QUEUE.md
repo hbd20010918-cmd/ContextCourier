@@ -9,7 +9,7 @@
 - [x] Add cross-account and cross-agent import adapters.
 - [x] Add English and Chinese user documentation.
 - [x] Add reproducibility, redaction, Git privacy, CLI, and hostile archive tests.
-- [ ] Pass independent code audit and address release-blocking findings.
+- [x] Pass independent code audit and address release-blocking findings.
 - [ ] Build and install wheel/sdist in a clean virtual environment.
 - [ ] Create public GitHub repository, push `main`, and confirm CI.
 - [ ] Publish annotated Git tag and GitHub Release `v0.1.0` with artifacts and checksums.

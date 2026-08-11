@@ -9,6 +9,7 @@ from contextcourier.config import (
     HARD_MAX_FILE_SIZE,
     HARD_MAX_FILES,
     HARD_MAX_TOTAL_SIZE,
+    MAX_POLICY_FILE_BYTES,
 )
 from contextcourier.errors import ConfigError
 
@@ -57,6 +58,34 @@ class ConfigTests(unittest.TestCase):
                 self.skipTest("File symlinks are not available in this environment")
             with self.assertRaises(ConfigError):
                 Config.load(root)
+
+    def test_config_accepts_utf8_bom(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / ".contextcourier.toml").write_bytes(
+                b"\xef\xbb\xbf[contextcourier]\nmax_files = 7\n"
+            )
+            self.assertEqual(Config.load(root).max_files, 7)
+
+    def test_oversized_config_is_rejected_before_parsing(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            path = root / ".contextcourier.toml"
+            with path.open("wb") as handle:
+                handle.truncate(MAX_POLICY_FILE_BYTES + 1)
+            with self.assertRaises(ConfigError):
+                Config.load(root)
+
+    def test_loaded_config_detects_policy_replacement(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            path = root / ".contextcourier.toml"
+            path.write_text("[contextcourier]\nmax_files = 7\n", encoding="utf-8")
+            config = Config.load(root)
+            path.write_text("[contextcourier]\nmax_files = 8\n", encoding="utf-8")
+
+            with self.assertRaises(ConfigError):
+                config.assert_source_unchanged(root)
 
 
 if __name__ == "__main__":
