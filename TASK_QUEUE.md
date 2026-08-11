@@ -11,8 +11,8 @@
 - [x] Add reproducibility, redaction, Git privacy, CLI, and hostile archive tests.
 - [x] Pass independent code audit and address release-blocking findings.
 - [x] Build and install wheel/sdist in a clean virtual environment.
-- [ ] Create public GitHub repository, push `main`, and confirm CI.
-- [ ] Publish annotated Git tag and GitHub Release `v0.1.0` with artifacts and checksums.
+- [x] Create public GitHub repository, push `main`, and confirm CI.
+- [x] Publish annotated Git tag and GitHub Release `v0.1.0` with artifacts and checksums.
 
 ## First-maintenance backlog
 
